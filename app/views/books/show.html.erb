@@ -1,0 +1,11 @@
+<%= @book.name %> - 
+<%= @book.author %> -
+<%= @book.released_date %> -
+<%= @book.user.username if @book.user %>
+<% @book.categories.each do |ct| %>
+	<small>
+		<%= ct.name %>
+	</small>
+<% end %>
+<br>
+<%= link_to 'Book Home', books_path %>

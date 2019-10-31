@@ -1,0 +1,11 @@
+<br><br>
+<%= render 'shared/errors', object: @category %>
+<br><br>
+<%= form_for (@category) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.submit "Create" %>
+<% end %>
+
+<br>
+<%= link_to "Back", categories_path %>

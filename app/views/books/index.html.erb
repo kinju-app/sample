@@ -1,0 +1,15 @@
+<h1>Books#index</h1>
+<br><br>
+<%= will_paginate @books %>
+<% @books.each do |b| %>
+<%= b.name %>  - 
+<%= b.author %> - 
+<%= b.released_date %> 
+<%= link_to 'View', book_path(b.id) %>
+<%= link_to 'Edit', edit_book_path(b.id) %>
+<%= link_to 'Delete', book_path(b.id), method: :delete, data: {confirm: 'Are you sure?'} %><br>
+<% end %>
+<br><br>
+<%= will_paginate @books %>
+<br>
+<%= link_to 'New Book', new_book_path %>

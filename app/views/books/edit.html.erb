@@ -1,0 +1,14 @@
+<%= form_for(@book) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %><br><br>
+<%= f.label :author %>
+<%= f.text_field :author %>
+<%= f.label :released_date %>
+<%= f.date_field :released_date %><br><br>
+<%= f.collection_check_boxes:category_ids, Category.all, :id, :name do |cb| %>
+	<% cb.label {cb.check_box + cb.text} %>
+<% end %>
+<%= f.submit "Edit" %>
+<% end %>
+<br>
+<%= link_to 'Book Home', books_path %>

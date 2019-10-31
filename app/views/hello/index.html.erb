@@ -1,0 +1,11 @@
+<h1>Hello</h1>
+
+<%= link_to "Book List", books_path %> |
+<%= link_to "User List", users_path %> |
+<%= link_to "Category List", categories_path %> |
+<% if logged_in? %>
+	<%= link_to "Log out", logout_path, method: :delete %>
+<% else %>
+	<%= link_to "Log in", login_path %> |
+	<%= link_to "Sign up", new_user_path %>
+<% end %>

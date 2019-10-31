@@ -1,0 +1,14 @@
+<h3 style="aligh:center">Category#index</h3>
+<br>
+<%= will_paginate @categories %>
+<br>
+<% @categories.each do |category| %>
+<%= category.name %>
+<%= link_to "View", category_path(category.id) %>
+<br>
+<% end %>
+<br>
+<%= will_paginate @categories %>
+<br>
+<br>
+<%= link_to "New Category", new_category_path %>

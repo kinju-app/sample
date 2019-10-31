@@ -1,0 +1,15 @@
+<h1>Users#index</h1>
+<br><br>
+<%= will_paginate @users %>
+<% @users.each do |u| %>
+<%= u.username %> - 
+<%= u.email %> 
+<%= link_to "View",  user_path(u.id) %>
+<%= link_to "Edit",  edit_user_path(u.id) %>
+<%= link_to "Delete", user_path(u.id), method: :delete, data: {confirm: 'Are you sure?'} %>
+<br>
+<% end %>
+<br><br>
+<%= will_paginate @users %>
+<br><br>
+<%= link_to "New user", new_user_path %>
