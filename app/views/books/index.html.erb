@@ -4,7 +4,8 @@
 <% @books.each do |b| %>
 <%= b.name %>  - 
 <%= b.author %> - 
-<%= b.released_date %> 
+<%= b.released_date %> - 
+<%= b.status %> - 
 <%= link_to 'View', book_path(b.id) %>
 <%= link_to 'Edit', edit_book_path(b.id) %>
 <%= link_to 'Delete', book_path(b.id), method: :delete, data: {confirm: 'Are you sure?'} %><br>
