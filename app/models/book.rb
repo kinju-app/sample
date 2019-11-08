@@ -6,5 +6,5 @@ class Book < ApplicationRecord
 	validates :name, presence: true
 	validates :author, presence: true
 	validates :released_date, presence: true
-
+	scope :available, ->{ where(status: "available")}
 end
